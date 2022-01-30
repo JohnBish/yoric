@@ -6,4 +6,5 @@ workspace = ".."
 
 [dependencies]
 bincode = "1"
+uuid = "0.8"
 serde = { version = "1", features = ["derive"] }

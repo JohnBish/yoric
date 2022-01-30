@@ -1,11 +1,17 @@
 use bincode;
-use futures_util::{future, pin_mut, StreamExt};
 use tokio::{
     io::{AsyncReadExt, AsyncWriteExt},
     sync::mpsc
 };
-use tokio_tungstenite::{connect_async, tungstenite::protocol::Message};
+use futures_util::{SinkExt, StreamExt};
+use tokio_tungstenite::connect_async;
+use tungstenite::{Message, Result};
 use yoric_core::*;
+
+async fn send_msg(msg: ClientMessage, tx: mpsc::UnboundedSender<Message>) {
+    println!("Sending message: {:?}", msg);
+    tx.send(Message::binary(bincode::serialize(&msg).unwrap())).unwrap();
+}
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -13,31 +19,35 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let url = url::Url::parse(&connect_addr).unwrap();
 
-    let (tx, rx) = futures_channel::mpsc::unbounded();
-    // tokio::spawn(read_stdin(stdin_tx));
+    let (tx, mut rx) = mpsc::unbounded_channel();
+
+    let tx1 = tx.clone();
     tokio::spawn(async move {
-        let serialized = bincode::serialize(&ClientMessage::Join(JoinRequest::NewLobby)).unwrap();
-        println!("{:?}", serialized);
-        let deserialized: ClientMessage = bincode::deserialize(&serialized[..]).unwrap();
-        println!("{:?}", deserialized);
-        tx.unbounded_send(Message::binary(bincode::serialize(&ClientMessage::Join(JoinRequest::NewLobby)).unwrap()))
+        send_msg(ClientMessage::Join(JoinRequest::NewLobby), tx1.clone()).await;
     });
 
-    let (ws_stream, _) = connect_async(url).await.expect("Failed to connect");
+    let (ws_stream, ws_sink) = connect_async(url).await.expect("Failed to connect");
     println!("WebSocket handshake has been successfully completed");
-
-    let (write, read) = ws_stream.split();
-
-    let stdin_to_ws = rx.map(Ok).forward(write);
-    let ws_to_stdout = {
-        read.for_each(|message| async {
-            let data = message.unwrap().into_data();
-            tokio::io::stdout().write_all(&data).await.unwrap();
-        })
-    };
-
-    pin_mut!(stdin_to_ws, ws_to_stdout);
-    future::select(stdin_to_ws, ws_to_stdout).await;
-
+    let (mut writer, mut reader) = ws_stream.split();
+    
+    loop {
+        tokio::select!{
+            msg = rx.recv() => match msg {
+                Some(msg) => writer.send(msg).await.unwrap(),
+                None => ()
+            },
+            msg = reader.next() => match msg {
+                Some(msg) => match msg {
+                    Ok(msg) => {
+                        if let Ok(msg) = bincode::deserialize::<ServerMessage>(&msg.into_data()[..]) {
+                            println!("Received: {:?}", &msg);
+                        }
+                    }
+                    Err(e) => eprintln!("{}", e)
+                },
+                None => ()
+            }
+        }
+    }
     Ok(())
 }

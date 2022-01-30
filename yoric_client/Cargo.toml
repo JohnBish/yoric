@@ -10,6 +10,7 @@ bincode = "*"
 yoric_core = { path = "../yoric_core" }
 serde = { version = "1", features = ["derive"] }
 tokio = { version = "1.0.0", features = ["full"] }
+tungstenite = "*"
 tokio-tungstenite = "*"
 futures-util = "*"
 futures-channel = "0.3"
