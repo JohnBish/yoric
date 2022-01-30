@@ -1,0 +1,9 @@
+[package]
+name = "yoric_core"
+version = "0.1.0"
+edition = "2021"
+workspace = ".."
+
+[dependencies]
+bincode = "1"
+serde = { version = "1", features = ["derive"] }

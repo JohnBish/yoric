@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "yoric_core",
+    "yoric_client",
+    "yoric_server",
+]

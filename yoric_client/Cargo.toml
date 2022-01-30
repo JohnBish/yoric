@@ -1,0 +1,15 @@
+[package]
+name = "yoric_client"
+version = "0.1.0"
+edition = "2021"
+workspace = ".."
+
+[dependencies]
+url = "2.0.0"
+bincode = "*"
+yoric_core = { path = "../yoric_core" }
+serde = { version = "1", features = ["derive"] }
+tokio = { version = "1.0.0", features = ["full"] }
+tokio-tungstenite = "*"
+futures-util = "*"
+futures-channel = "0.3"

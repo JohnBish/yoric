@@ -1,0 +1,15 @@
+[package]
+name = "yoric_server"
+version = "0.1.0"
+edition = "2021"
+workspace = ".."
+
+[dependencies]
+bincode = "*"
+uuid = { version = "0.8", features = ["v4"] }
+yoric_core = { path = "../yoric_core" }
+serde = { version = "1", features = ["derive"] }
+futures-util = "*"
+tokio = { version = "1", features = ["full"] }
+tungstenite = "*"
+tokio-tungstenite = "*"
