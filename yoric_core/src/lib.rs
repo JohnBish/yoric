@@ -16,7 +16,10 @@ pub enum ServerMessage {
 }
 
 #[derive(Debug)]
-pub struct GameState {}
+pub struct GameState { }
+
+#[derive(Debug)]
+pub struct PartialState { }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub enum JoinRequest {

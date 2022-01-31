@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use bincode;
 use uuid::Uuid;
 use rand::Rng;
-use futures_util::{SinkExt, StreamExt};
+use futures_util::{Stream, SinkExt, StreamExt, future::select_all, FutureExt};
 use std::net::SocketAddr;
 use tokio::{
     net::{TcpListener, TcpStream},
@@ -88,13 +88,12 @@ impl Connection {
 struct ClientStub {
     id: Uuid,
     sender: mpsc::Sender<ServerMessage>,
-    receiver: mpsc::Receiver<ClientMessage>
 }
 
 #[derive(Debug)]
 struct LobbyStub {
     id: String,
-    sender: mpsc::Sender<ClientMessage>,
+    sender: mpsc::Sender<(Uuid, ClientMessage)>,
     receiver: mpsc::Receiver<ServerMessage>
 }
 
@@ -103,35 +102,38 @@ struct Lobby {
     id: String,
     game_state: GameState,
     connections: Vec<ClientStub>,
-    reg_channel: mpsc::Receiver<(Uuid, oneshot::Sender<LobbyStub>)>
+    reg_channel: mpsc::Receiver<(Uuid, oneshot::Sender<LobbyStub>)>,
+    client_channel: mpsc::Receiver<(Uuid, ClientMessage)>,
+    client_stub_sender: mpsc::Sender<(Uuid, ClientMessage)> // For cloning and distributing to clients
 }
 
 impl Lobby {
     fn new(id: String) -> (Lobby, mpsc::Sender<(Uuid, oneshot::Sender<LobbyStub>)>) {
-        let (tx, rx) = mpsc::channel(32);
+        let (txr, rxr) = mpsc::channel(32); // For registration
+        let (txc, rxc) = mpsc::channel(32); // For messages from client
         (Lobby {
             id,
             game_state: GameState { },
             connections: vec![],
-            reg_channel: rx
-        }, tx)
+            reg_channel: rxr,
+            client_channel: rxc,
+            client_stub_sender: txc
+        }, txr)
     }
 
     // Registers client and returns stub
     fn register_client(&mut self, id: Uuid) -> LobbyStub {
-        let (txs, rxc) = mpsc::channel(32);
-        let (txc, rxs) = mpsc::channel(32);
+        let (tx, rx) = mpsc::channel(32);
 
         self.connections.push(ClientStub {
             id,
-            sender: txs,
-            receiver: rxs
+            sender: tx,
         });
         
         LobbyStub {
             id: self.id.clone(),
-            sender: txc,
-            receiver: rxc
+            sender: self.client_stub_sender.clone(),
+            receiver: rx
         }
     }
 
@@ -151,9 +153,14 @@ impl Lobby {
 
     async fn run(&mut self) {
         println!("Starting lobby with id {}", self.id);
-        tokio::select! {
-            Some((id, stub_sender)) = self.reg_channel.recv() => {
-                stub_sender.send(self.register_client(id)).unwrap();
+        loop {
+            tokio::select! {
+                Some((id, stub_sender)) = self.reg_channel.recv() => {
+                    stub_sender.send(self.register_client(id)).unwrap();
+                },
+                Some((id, msg)) = self.client_channel.recv() => {
+                    println!("New message {:?} from {:?}", msg, id);
+                }
             }
         }
     }
@@ -241,8 +248,10 @@ async fn handle_connection(peer: SocketAddr, stream: TcpStream, tx: mpsc::Sender
     // Forward all new messages to lobby, and forward all messages from lobby to client
     loop {
         tokio::select! {
-            client_msg = conn.next_msg() => lobby_stub.sender.send(client_msg).await.unwrap(),
-            Some(lobby_msg) = lobby_stub.receiver.recv() => conn.send_msg(lobby_msg).await
+            client_msg = conn.next_msg() =>
+                lobby_stub.sender.send((conn.id.clone(), client_msg)).await.unwrap(),
+            Some(lobby_msg) = lobby_stub.receiver.recv() =>
+                conn.send_msg(lobby_msg).await
         }
     }
 }

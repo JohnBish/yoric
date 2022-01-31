@@ -41,6 +41,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                     Ok(msg) => {
                         if let Ok(msg) = bincode::deserialize::<ServerMessage>(&msg.into_data()[..]) {
                             println!("Received: {:?}", &msg);
+                            send_msg(ClientMessage::Do(Command::Play(Card::Skull)), tx.clone()).await;
                         }
                     }
                     Err(e) => eprintln!("{}", e)
