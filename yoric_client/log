@@ -1,0 +1,659 @@
+   Compiling yoric_core v0.1.0 (/home/atlas/Documents/Rust/yoric/yoric_core)
+warning: unused import: `uuid::Uuid`
+ --> yoric_core/src/lib.rs:7:5
+  |
+7 | use uuid::Uuid;
+  |     ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: `yoric_core` (lib) generated 1 warning
+   Compiling yoric_client v0.1.0 (/home/atlas/Documents/Rust/yoric/yoric_client)
+warning: variable `handle` is assigned to, but never used
+   --> yoric_client/src/app.rs:305:9
+    |
+305 |     let handle: ClientHandle;
+    |         ^^^^^^
+    |
+    = note: `#[warn(unused_variables)]` on by default
+    = note: consider using `_handle` instead
+
+warning: value assigned to `handle` is never read
+   --> yoric_client/src/app.rs:309:9
+    |
+309 |         handle = data.handle.clone();
+    |         ^^^^^^
+    |
+    = note: `#[warn(unused_assignments)]` on by default
+    = help: maybe it is overwritten before being read?
+
+warning: field is never read: `sender`
+  --> yoric_client/src/client.rs:57:5
+   |
+57 |     sender: mpsc::UnboundedSender<ClientCmd>,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: associated function is never used: `send`
+  --> yoric_client/src/client.rs:64:12
+   |
+64 |     pub fn send(&self, msg: ClientMessage) {
+   |            ^^^^
+
+warning: field is never read: `state`
+  --> yoric_client/src/app.rs:17:5
+   |
+17 |     state: Option<GameState>
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: field is never read: `subscriptions`
+  --> yoric_client/src/app.rs:32:5
+   |
+32 |     subscriptions: Vec<Subscription>,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: field is never read: `trackers`
+  --> yoric_client/src/app.rs:33:5
+   |
+33 |     trackers: Vec<FocusTracker<Button>>
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function is never used: `display_msg`
+   --> yoric_client/src/app.rs:128:4
+    |
+128 | fn display_msg(s: &mut Cursive, msg: ServerMessage) {
+    |    ^^^^^^^^^^^
+
+warning: `yoric_client` (bin "yoric_client") generated 8 warnings
+    Finished dev [unoptimized + debuginfo] target(s) in 2.54s
+     Running `/home/atlas/Documents/Rust/yoric/target/debug/yoric_client`
+[2022-02-07T04:33:52Z TRACE mio::poll] registering event source with poller: token=Token(1), interests=READABLE | WRITABLE
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::handshake] Setting ctx when starting handshake
+[2022-02-07T04:33:52Z TRACE tungstenite::handshake::client] Request: "GET / HTTP/1.1\r\nHost: 192.168.2.22:8000\r\nConnection: Upgrade\r\nUpgrade: websocket\r\nSec-WebSocket-Version: 13\r\nSec-WebSocket-Key: hUdQDDiMkWHPYl5d68C/0Q==\r\n\r\n"
+[2022-02-07T04:33:52Z TRACE tungstenite::handshake::client] Client handshake initiated.
+[2022-02-07T04:33:52Z TRACE tungstenite::handshake::machine] Doing handshake round.
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:167 Write.write
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:169 Write.with_context write -> poll_write
+[2022-02-07T04:33:52Z TRACE tungstenite::handshake::machine] Doing handshake round.
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:149 Read.read
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:152 Read.with_context read -> poll_read
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::handshake] Setting context in handshake
+[2022-02-07T04:33:52Z TRACE tungstenite::handshake::machine] Doing handshake round.
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:149 Read.read
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:152 Read.with_context read -> poll_read
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::handshake] Setting context in handshake
+[2022-02-07T04:33:52Z TRACE tungstenite::handshake::machine] Doing handshake round.
+[2022-02-07T04:33:52Z TRACE mio::poll] registering event source with poller: token=Token(0), interests=READABLE
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:149 Read.read
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:152 Read.with_context read -> poll_read
+[2022-02-07T04:33:52Z TRACE mio::poll] registering event source with poller: token=Token(1), interests=READABLE
+[2022-02-07T04:33:52Z DEBUG tungstenite::handshake::client] Client handshake done.
+[2022-02-07T04:33:52Z INFO  yoric_client::client] WebSocket handshake has been successfully completed
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:272 Stream.poll_next
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:274 Stream.with_context poll_next -> read_message()
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:33:52Z TRACE tungstenite::protocol] Frames still in queue: 0
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:149 Read.read
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:152 Read.with_context read -> poll_read
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] WouldBlock
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:272 Stream.poll_next
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:274 Stream.with_context poll_next -> read_message()
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:33:52Z TRACE tungstenite::protocol] Frames still in queue: 0
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:149 Read.read
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:152 Read.with_context read -> poll_read
+[2022-02-07T04:33:52Z TRACE tokio_tungstenite::compat] WouldBlock
+[2022-02-07T04:33:54Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:54Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:54Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 11, y: 1 }, XY { x: 12, y: 1 }, XY { x: 1, y: 1 }, XY { x: 6, y: 1 }]
+[2022-02-07T04:33:54Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 12, y: 4 }
+[2022-02-07T04:33:54Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 1 }, XY { x: 19, y: 3 }, XY { x: 1, y: 1 }, XY { x: 12, y: 4 }]
+[2022-02-07T04:33:54Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 33, y: 4 }
+[2022-02-07T04:33:54Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 33, y: 4 }
+[2022-02-07T04:33:54Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 33, y: 4 }
+[2022-02-07T04:33:54Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 11, y: 1 }, XY { x: 12, y: 1 }, XY { x: 1, y: 1 }, XY { x: 6, y: 1 }]
+[2022-02-07T04:33:54Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 12, y: 4 }
+[2022-02-07T04:33:54Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 1 }, XY { x: 19, y: 3 }, XY { x: 1, y: 1 }, XY { x: 12, y: 4 }]
+[2022-02-07T04:33:54Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 33, y: 4 }
+[2022-02-07T04:33:54Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 12, y: 4 }
+[2022-02-07T04:33:54Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 11, y: 1 }, XY { x: 12, y: 1 }, XY { x: 1, y: 1 }, XY { x: 6, y: 1 }]
+[2022-02-07T04:33:54Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 12, y: 4 }
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:272 Stream.poll_next
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:274 Stream.with_context poll_next -> read_message()
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol] Frames still in queue: 0
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:149 Read.read
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:152 Read.with_context read -> poll_read
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] WouldBlock
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol] Frames still in queue: 0
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol] Frames still in queue: 1
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol] Sending frame: Frame { header: FrameHeader { is_final: true, rsv1: false, rsv2: false, rsv3: false, opcode: Data(Binary), mask: Some([138, 80, 64, 36]) }, payload: [0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 115, 117, 100, 111, 114, 109] }
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol::frame] writing frame 
+    <FRAME>
+    final: true
+    reserved: false false false
+    opcode: BINARY
+    length: 28
+    payload length: 22
+    payload: 0x00000000600000007375646f726d
+                
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:167 Write.write
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:169 Write.with_context write -> poll_write
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol] Frames still in queue: 0
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:272 Stream.poll_next
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:274 Stream.with_context poll_next -> read_message()
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol] Frames still in queue: 0
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:149 Read.read
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:152 Read.with_context read -> poll_read
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] WouldBlock
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 11, y: 1 }, XY { x: 12, y: 1 }, XY { x: 1, y: 1 }, XY { x: 6, y: 1 }]
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 12, y: 4 }
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:272 Stream.poll_next
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:274 Stream.with_context poll_next -> read_message()
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 1 }, XY { x: 19, y: 3 }, XY { x: 1, y: 1 }, XY { x: 12, y: 4 }]
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol] Frames still in queue: 0
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 33, y: 4 }
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:149 Read.read
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:152 Read.with_context read -> poll_read
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 33, y: 4 }
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol::frame::frame] Parsed headers [130, 16]
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol::frame::frame] First: 10000010
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol::frame::frame] Second: 10000
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol::frame::frame] Opcode: Data(Binary)
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol::frame::frame] Masked: false
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol::frame] received frame 
+    <FRAME>
+    final: true
+    reserved: false false false
+    opcode: BINARY
+    length: 18
+    payload length: 16
+    payload: 0x200040000000474e584d
+                
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol] Received message           GNXM
+[2022-02-07T04:33:56Z INFO  yoric_client::client] Received: LobbyID("GNXM")
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 1 }, XY { x: 19, y: 3 }, XY { x: 1, y: 1 }, XY { x: 12, y: 4 }]
+[2022-02-07T04:33:56Z INFO  yoric_client::client] Notifying subscribers
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 33, y: 4 }
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:272 Stream.poll_next
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:274 Stream.with_context poll_next -> read_message()
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol] Frames still in queue: 0
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:149 Read.read
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:152 Read.with_context read -> poll_read
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] WouldBlock
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 26, y: 1 }, XY { x: 6, y: 1 }]
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 26, y: 2 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 26, y: 2 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 26, y: 1 }, XY { x: 6, y: 1 }]
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 26, y: 2 }
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:272 Stream.poll_next
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:274 Stream.with_context poll_next -> read_message()
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol] Frames still in queue: 0
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:149 Read.read
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:152 Read.with_context read -> poll_read
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] WouldBlock
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 1 }, XY { x: 19, y: 3 }, XY { x: 1, y: 1 }, XY { x: 12, y: 4 }]
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 33, y: 4 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 33, y: 4 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 1 }, XY { x: 19, y: 3 }, XY { x: 1, y: 1 }, XY { x: 12, y: 4 }]
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 33, y: 4 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 6, y: 1 }, XY { x: 7, y: 1 }]
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 13, y: 1 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 2, y: 1 }, XY { x: 13, y: 1 }]
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 13, y: 2 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 6, y: 1 }, XY { x: 7, y: 1 }]
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 13, y: 1 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 2, y: 1 }, XY { x: 13, y: 1 }]
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 13, y: 2 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::list_view] Available: 94
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::list_view] Available: 0
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 1 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 6, y: 1 }, XY { x: 7, y: 1 }]
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 13, y: 1 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::list_view] Offset: 1
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::list_view] Offset: 1
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:272 Stream.poll_next
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:274 Stream.with_context poll_next -> read_message()
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol] Frames still in queue: 0
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:149 Read.read
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:152 Read.with_context read -> poll_read
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol::frame::frame] Parsed headers [130, 34]
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol::frame::frame] First: 10000010
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol::frame::frame] Second: 100010
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol::frame::frame] Opcode: Data(Binary)
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol::frame::frame] Masked: false
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol::frame] received frame 
+    <FRAME>
+    final: true
+    reserved: false false false
+    opcode: BINARY
+    length: 36
+    payload length: 34
+    payload: 0x30001000000000000000600000007375646f726d
+                
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol] Received message                          sudorm
+[2022-02-07T04:33:56Z INFO  yoric_client::client] Received: Lobby(LobbyState { count: 1, unames: [], host: "sudorm" })
+[2022-02-07T04:33:56Z INFO  yoric_client::client] Notifying subscribers
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:272 Stream.poll_next
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:274 Stream.with_context poll_next -> read_message()
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:33:56Z TRACE tungstenite::protocol] Frames still in queue: 0
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:149 Read.read
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:152 Read.with_context read -> poll_read
+[2022-02-07T04:33:56Z TRACE tokio_tungstenite::compat] WouldBlock
+[2022-02-07T04:33:56Z INFO  yoric_client::app] 1 players
+[2022-02-07T04:33:56Z INFO  yoric_client::app] names, []
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 1 }, XY { x: 19, y: 3 }, XY { x: 1, y: 1 }, XY { x: 12, y: 4 }]
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 33, y: 4 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 33, y: 4 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 1 }, XY { x: 19, y: 3 }, XY { x: 1, y: 1 }, XY { x: 12, y: 4 }]
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 33, y: 4 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 6, y: 1 }, XY { x: 7, y: 1 }]
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 13, y: 1 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 14, y: 2 }, XY { x: 13, y: 1 }]
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 14, y: 3 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 14, y: 2 }, XY { x: 13, y: 1 }]
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 14, y: 3 }
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::list_view] Available: 94
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::list_view] Available: 6
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::list_view] Offset: 1
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::list_view] Offset: 7
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::list_view] Offset: 1
+[2022-02-07T04:33:56Z DEBUG cursive_core::views::list_view] Offset: 7
+[2022-02-07T04:33:57Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:57Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 1 }, XY { x: 19, y: 3 }, XY { x: 1, y: 1 }, XY { x: 12, y: 4 }]
+[2022-02-07T04:33:57Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 33, y: 4 }
+[2022-02-07T04:33:57Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 33, y: 4 }
+[2022-02-07T04:33:57Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 1 }, XY { x: 19, y: 3 }, XY { x: 1, y: 1 }, XY { x: 12, y: 4 }]
+[2022-02-07T04:33:57Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 33, y: 4 }
+[2022-02-07T04:33:57Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:57Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 14, y: 2 }, XY { x: 13, y: 1 }]
+[2022-02-07T04:33:57Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 14, y: 3 }
+[2022-02-07T04:33:57Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:57Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 14, y: 2 }, XY { x: 13, y: 1 }]
+[2022-02-07T04:33:57Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 14, y: 3 }
+[2022-02-07T04:33:57Z DEBUG cursive_core::views::list_view] Available: 94
+[2022-02-07T04:33:57Z DEBUG cursive_core::views::list_view] Available: 6
+[2022-02-07T04:33:57Z DEBUG cursive_core::views::list_view] Offset: 1
+[2022-02-07T04:33:57Z DEBUG cursive_core::views::list_view] Offset: 7
+[2022-02-07T04:33:57Z DEBUG cursive_core::views::list_view] Offset: 1
+[2022-02-07T04:33:57Z DEBUG cursive_core::views::list_view] Offset: 7
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:33:58Z TRACE tungstenite::protocol] Frames still in queue: 0
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:33:58Z TRACE tungstenite::protocol] Frames still in queue: 1
+[2022-02-07T04:33:58Z TRACE tungstenite::protocol] Sending frame: Frame { header: FrameHeader { is_final: true, rsv1: false, rsv2: false, rsv3: false, opcode: Data(Binary), mask: Some([118, 246, 55, 193]) }, payload: [1, 0, 0, 0] }
+[2022-02-07T04:33:58Z TRACE tungstenite::protocol::frame] writing frame 
+    <FRAME>
+    final: true
+    reserved: false false false
+    opcode: BINARY
+    length: 10
+    payload length: 4
+    payload: 0x1000
+                
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:167 Write.write
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:169 Write.with_context write -> poll_write
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:33:58Z TRACE tungstenite::protocol] Frames still in queue: 0
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:272 Stream.poll_next
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:274 Stream.with_context poll_next -> read_message()
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:33:58Z TRACE tungstenite::protocol] Frames still in queue: 0
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:149 Read.read
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:152 Read.with_context read -> poll_read
+[2022-02-07T04:33:58Z TRACE tungstenite::protocol::frame::frame] Parsed headers [130, 4]
+[2022-02-07T04:33:58Z TRACE tungstenite::protocol::frame::frame] First: 10000010
+[2022-02-07T04:33:58Z TRACE tungstenite::protocol::frame::frame] Second: 100
+[2022-02-07T04:33:58Z TRACE tungstenite::protocol::frame::frame] Opcode: Data(Binary)
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 1 }, XY { x: 19, y: 3 }, XY { x: 1, y: 1 }, XY { x: 12, y: 4 }]
+[2022-02-07T04:33:58Z TRACE tungstenite::protocol::frame::frame] Masked: false
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 33, y: 4 }
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 33, y: 4 }
+[2022-02-07T04:33:58Z TRACE tungstenite::protocol::frame] received frame 
+    <FRAME>
+    final: true
+    reserved: false false false
+    opcode: BINARY
+    length: 6
+    payload length: 4
+    payload: 0x5000
+                
+[2022-02-07T04:33:58Z TRACE tungstenite::protocol] Received message    
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 1 }, XY { x: 19, y: 3 }, XY { x: 1, y: 1 }, XY { x: 12, y: 4 }]
+[2022-02-07T04:33:58Z INFO  yoric_client::client] Received: Starting
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 33, y: 4 }
+[2022-02-07T04:33:58Z INFO  yoric_client::client] Notifying subscribers
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:272 Stream.poll_next
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 14, y: 2 }, XY { x: 13, y: 1 }]
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 14, y: 3 }
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:274 Stream.with_context poll_next -> read_message()
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 14, y: 2 }, XY { x: 13, y: 1 }]
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 14, y: 3 }
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::list_view] Available: 94
+[2022-02-07T04:33:58Z TRACE tungstenite::protocol] Frames still in queue: 0
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:149 Read.read
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::list_view] Available: 6
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:152 Read.with_context read -> poll_read
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] WouldBlock
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:272 Stream.poll_next
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:274 Stream.with_context poll_next -> read_message()
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:33:58Z TRACE tungstenite::protocol] Frames still in queue: 0
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:149 Read.read
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:152 Read.with_context read -> poll_read
+[2022-02-07T04:33:58Z TRACE tokio_tungstenite::compat] WouldBlock
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::list_view] Offset: 1
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::list_view] Offset: 7
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::list_view] Offset: 1
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::list_view] Offset: 7
+[2022-02-07T04:33:58Z INFO  yoric_client::app] Dropping subscription
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::text_area] Computing! Oh yeah!
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 1 }, XY { x: 19, y: 3 }, XY { x: 1, y: 1 }, XY { x: 12, y: 4 }]
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 33, y: 4 }
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 33, y: 4 }
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 1 }, XY { x: 19, y: 3 }, XY { x: 1, y: 1 }, XY { x: 12, y: 4 }]
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 33, y: 4 }
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::text_area] Computing! Oh yeah!
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::text_area] [Row { start: 0, end: 0, width: 0, is_wrapped: false }]
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 47, y: 3 }, XY { x: 47, y: 3 }]
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 94, y: 3 }
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 33 }, XY { x: 94, y: 3 }]
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 94, y: 36 }
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::text_area] Cache is still valid.
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::text_area] [Row { start: 0, end: 0, width: 0, is_wrapped: false }]
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 47, y: 3 }, XY { x: 47, y: 3 }]
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 94, y: 3 }
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 33 }, XY { x: 94, y: 3 }]
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 94, y: 36 }
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 3 }
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::text_area] Computing! Oh yeah!
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::text_area] [Row { start: 0, end: 0, width: 0, is_wrapped: false }]
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 47, y: 3 }, XY { x: 47, y: 3 }]
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 94, y: 3 }
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::list_view] Available: 12
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::text_area] Cache is still valid.
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::text_area] [Row { start: 0, end: 0, width: 0, is_wrapped: false }]
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::text_area] Computing! Oh yeah!
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::list_view] Offset: 1
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::text_area] Content: ``
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::text_area] Drawing row 0
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::text_area] row: Row { start: 0, end: 0, width: 0, is_wrapped: false }
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::text_area] row text: ``
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::list_view] Offset: 1
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::text_area] Content: ``
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::text_area] Drawing row 0
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::text_area] row: Row { start: 0, end: 0, width: 0, is_wrapped: false }
+[2022-02-07T04:33:58Z DEBUG cursive_core::views::text_area] row text: ``
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:34:00Z TRACE tungstenite::protocol] Frames still in queue: 0
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:34:00Z TRACE tungstenite::protocol] Frames still in queue: 1
+[2022-02-07T04:34:00Z TRACE tungstenite::protocol] Sending frame: Frame { header: FrameHeader { is_final: true, rsv1: false, rsv2: false, rsv3: false, opcode: Data(Binary), mask: Some([117, 3, 165, 6]) }, payload: [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] }
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:34:00Z TRACE tungstenite::protocol::frame] writing frame 
+    <FRAME>
+    final: true
+    reserved: false false false
+    opcode: BINARY
+    length: 18
+    payload length: 12
+    payload: 0x200000000000
+                
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:167 Write.write
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 1 }, XY { x: 19, y: 3 }, XY { x: 1, y: 1 }, XY { x: 12, y: 4 }]
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 33, y: 4 }
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 33, y: 4 }
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:169 Write.with_context write -> poll_write
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 1 }, XY { x: 19, y: 3 }, XY { x: 1, y: 1 }, XY { x: 12, y: 4 }]
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 33, y: 4 }
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::text_area] Computing! Oh yeah!
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::text_area] [Row { start: 0, end: 0, width: 0, is_wrapped: false }]
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 47, y: 3 }, XY { x: 47, y: 3 }]
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 94, y: 3 }
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 33 }, XY { x: 94, y: 3 }]
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 94, y: 36 }
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::text_area] Cache is still valid.
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::text_area] [Row { start: 0, end: 0, width: 0, is_wrapped: false }]
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 47, y: 3 }, XY { x: 47, y: 3 }]
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 94, y: 3 }
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 33 }, XY { x: 94, y: 3 }]
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 94, y: 36 }
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 3 }
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::text_area] Computing! Oh yeah!
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::text_area] [Row { start: 0, end: 0, width: 0, is_wrapped: false }]
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 47, y: 3 }, XY { x: 47, y: 3 }]
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 94, y: 3 }
+[2022-02-07T04:34:00Z TRACE tungstenite::protocol] Frames still in queue: 0
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::list_view] Available: 12
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::text_area] Cache is still valid.
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::text_area] [Row { start: 0, end: 0, width: 0, is_wrapped: false }]
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::text_area] Computing! Oh yeah!
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:272 Stream.poll_next
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:274 Stream.with_context poll_next -> read_message()
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:34:00Z TRACE tungstenite::protocol] Frames still in queue: 0
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:149 Read.read
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:152 Read.with_context read -> poll_read
+[2022-02-07T04:34:00Z TRACE tungstenite::protocol::frame::frame] Parsed headers [130, 69]
+[2022-02-07T04:34:00Z TRACE tungstenite::protocol::frame::frame] First: 10000010
+[2022-02-07T04:34:00Z TRACE tungstenite::protocol::frame::frame] Second: 1000101
+[2022-02-07T04:34:00Z TRACE tungstenite::protocol::frame::frame] Opcode: Data(Binary)
+[2022-02-07T04:34:00Z TRACE tungstenite::protocol::frame::frame] Masked: false
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::list_view] Offset: 1
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::text_area] Content: ``
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::text_area] Drawing row 0
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::text_area] row: Row { start: 0, end: 0, width: 0, is_wrapped: false }
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::text_area] row text: ``
+[2022-02-07T04:34:00Z TRACE tungstenite::protocol::frame] received frame 
+    <FRAME>
+    final: true
+    reserved: false false false
+    opcode: BINARY
+    length: 71
+    payload length: 69
+    payload: 0x000010000000600000007375646f726d00030100000000000000000001000600000007375646f726d
+                
+[2022-02-07T04:34:00Z TRACE tungstenite::protocol] Received message                   sudorm                                 sudorm
+[2022-02-07T04:34:00Z INFO  yoric_client::client] Received: PartialState(GameState { players: {"sudorm": PlayerState { points: false, bid: 0, cards_in_hand: Cards { skulls: 0, roses: 3, unknown: 0 }, cards_in_play: [Skull], cards_revealed: [] }}, phase: Play, turn: "sudorm" })
+[2022-02-07T04:34:00Z INFO  yoric_client::client] Notifying subscribers
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:272 Stream.poll_next
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:274 Stream.with_context poll_next -> read_message()
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:34:00Z TRACE tungstenite::protocol] Frames still in queue: 0
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:149 Read.read
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:152 Read.with_context read -> poll_read
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::list_view] Offset: 1
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] WouldBlock
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::text_area] Content: ``
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::text_area] Drawing row 0
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::text_area] row: Row { start: 0, end: 0, width: 0, is_wrapped: false }
+[2022-02-07T04:34:00Z DEBUG cursive_core::views::text_area] row text: ``
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:272 Stream.poll_next
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:227 WebSocketStream.with_context
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/lib.rs:274 Stream.with_context poll_next -> read_message()
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:178 Write.flush
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:180 Write.with_context flush -> poll_flush
+[2022-02-07T04:34:00Z TRACE tungstenite::protocol] Frames still in queue: 0
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:149 Read.read
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:126 AllowStd.with_context
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] /home/atlas/.cargo/registry/src/github.com-1ecc6299db9ec823/tokio-tungstenite-0.16.1/src/compat.rs:152 Read.with_context read -> poll_read
+[2022-02-07T04:34:00Z TRACE tokio_tungstenite::compat] WouldBlock
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 1 }, XY { x: 19, y: 3 }, XY { x: 1, y: 1 }, XY { x: 12, y: 4 }]
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 33, y: 4 }
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 33, y: 4 }
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 1 }, XY { x: 19, y: 3 }, XY { x: 1, y: 1 }, XY { x: 12, y: 4 }]
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 33, y: 4 }
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::text_area] Computing! Oh yeah!
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::text_area] [Row { start: 0, end: 0, width: 0, is_wrapped: false }]
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 47, y: 3 }, XY { x: 47, y: 3 }]
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 94, y: 3 }
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 33 }, XY { x: 94, y: 3 }]
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 94, y: 36 }
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 46 }
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::text_area] Cache is still valid.
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::text_area] [Row { start: 0, end: 0, width: 0, is_wrapped: false }]
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 47, y: 3 }, XY { x: 47, y: 3 }]
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 94, y: 3 }
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 1, y: 33 }, XY { x: 94, y: 3 }]
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 94, y: 36 }
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::linear_layout] Req: XY { x: 95, y: 3 }
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::text_area] Computing! Oh yeah!
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::text_area] [Row { start: 0, end: 0, width: 0, is_wrapped: false }]
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::linear_layout] Ideal sizes: [XY { x: 47, y: 3 }, XY { x: 47, y: 3 }]
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::linear_layout] Ideal result: XY { x: 94, y: 3 }
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::list_view] Available: 12
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::text_area] Cache is still valid.
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::text_area] [Row { start: 0, end: 0, width: 0, is_wrapped: false }]
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::text_area] Computing! Oh yeah!
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::list_view] Offset: 1
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::text_area] Content: ``
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::text_area] Drawing row 0
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::text_area] row: Row { start: 0, end: 0, width: 0, is_wrapped: false }
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::text_area] row text: ``
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::list_view] Offset: 1
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::text_area] Content: ``
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::text_area] Drawing row 0
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::text_area] row: Row { start: 0, end: 0, width: 0, is_wrapped: false }
+[2022-02-07T04:34:02Z DEBUG cursive_core::views::text_area] row text: ``
+[2022-02-07T04:34:02Z INFO  yoric_client::app] Dropping subscription
+[2022-02-07T04:34:02Z TRACE mio::poll] deregistering event source from poller

@@ -1,0 +1,18 @@
+shadow = true
+# border = "simple"
+
+[colors]
+    background = "2e3440"
+    shadow     = ["#434c5e", "black"]
+    view       = "#3b4252"
+
+    primary   = ["#6e7c99"]
+    secondary = "#5f6b85"
+    tertiary  = "#b48ead"
+
+    title_primary   = "#8fbcbb"
+    title_secondary = "#434c5e"
+
+    highlight          = "#6e7c99"
+    highlight_inactive = "#2e3440"
+    highlight_text     = "#2e3440"
